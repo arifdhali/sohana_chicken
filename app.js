@@ -1,7 +1,18 @@
 import express from "express";
 const app = express();
-
 import cors from "cors";
+
+import "./models/index.js";
+
+import sequelize from "./config/Db.js";
+
+
+await sequelize.authenticate();
+
+await sequelize.sync({ alter: true, force: true });
+
+console.log("Database connected successfully.");
+
 
 app.use(cors({
     credentials: true,

@@ -1,11 +1,12 @@
+
 import { DataTypes } from "sequelize";
 import sequelize from "../config/Db.js";
 
 
-const User = sequelize.define(
-    "users",
-    {
 
+const Farms = sequelize.define(
+    "farms",
+    {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -14,38 +15,35 @@ const User = sequelize.define(
         },
         name: {
             type: DataTypes.STRING,
-            defaultValue: null,
-            allowNull: true,
+            allowNull: false,
         },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: true,
-            unique: true,
-        },
-        password: {
+        location: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        role_id: {
-            type: DataTypes.INTEGER,
+        mobile_number: {
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: "roles",
-                key: "id",
-            },
-            onDelete: "RESTRICT",
-            onUpdate: "CASCADE",
+        },
+        availablity_status: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         },
         status: {
             type: DataTypes.BOOLEAN,
             defaultValue: true,
             allowNull: false,
-        }
-    }, {
-    timestamps: true,
-    underscored: true,
-}
-)
+        },
+        capacity: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
+    },
+    {
+        timestamps: true,
+        underscored: true,
+    }
+);
 
-
-export default User;
+export default Farms;
