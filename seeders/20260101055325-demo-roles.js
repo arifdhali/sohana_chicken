@@ -13,7 +13,7 @@ export async function up(queryInterface, Sequelize) {
    * }], {});
   */
 
-  await queryInterface.bulkInsert('Roles', [
+  await queryInterface.bulkInsert('roles', [
     {
       name: 'admin',
       permissions: 'all',

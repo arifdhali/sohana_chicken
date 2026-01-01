@@ -1,6 +1,6 @@
 // models/PasswordReset.js
 import { DataTypes } from "sequelize";
-import sequelize from "../config/Db.js";
+import sequelize from "../config/db.js";
 
 const PasswordReset = sequelize.define(
     "password_resets",

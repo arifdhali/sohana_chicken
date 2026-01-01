@@ -1,4 +1,4 @@
-import { LoginService } from "../services/auth.service.js";
+import { ForgotPasswordService, LoginService } from "../services/auth.service.js";
 import { success } from "../utils/response.js";
 
 
@@ -15,12 +15,19 @@ const LoginController = async (req, res, next) => {
 
 }
 
-const RegisterController = (req, res) => {
+const ForgotPasswordController = async (req, res, next) => {
 
-    const { email, password } = req.body;
-    console.log(email, password);
+    try {
+
+        const { email } = req.body;
+        await ForgotPasswordService(email);
+        
+    } catch (error) {
+        next(error);
+    }
+
 
 }
 
 
-export { LoginController, RegisterController };
+export { LoginController, ForgotPasswordController };

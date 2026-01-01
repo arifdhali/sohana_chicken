@@ -2,7 +2,7 @@ import express from "express";
 const app = express();
 import cors from "cors";
 import "./models/index.js";
-import sequelize from "./config/Db.js";
+import sequelize from "./config/db.js";
 import authRoutes from "./routes/Auth.route.js";
 import errorMidleware from "./middlewares/error.middleware.js";
 

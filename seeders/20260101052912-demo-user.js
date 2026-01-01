@@ -13,7 +13,7 @@ export async function up(queryInterface, Sequelize) {
    * }], {});
   */
 
-  await queryInterface.bulkInsert('Users', [
+  await queryInterface.bulkInsert('users', [
     {
       name: 'John Doe',
       email: 'john@example.com',
