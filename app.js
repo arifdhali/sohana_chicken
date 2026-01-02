@@ -4,6 +4,7 @@ import cors from "cors";
 import "./models/index.js";
 import sequelize from "./config/db.js";
 import authRoutes from "./routes/Auth.route.js";
+import customerRoutes from "./routes/Customer.route.js";
 import errorMidleware from "./middlewares/error.middleware.js";
 
 app.use(cors({
@@ -27,6 +28,7 @@ await sequelize.authenticate().then(() => {
 
 
 app.use("/api/auth", authRoutes);
+app.use("/api/customer", customerRoutes);
 
 app.use(errorMidleware);
 

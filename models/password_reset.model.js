@@ -35,7 +35,8 @@ const PasswordReset = sequelize.define(
         used: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
-        }
+        },
+   
     },
     {
         timestamps: true,
